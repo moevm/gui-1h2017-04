@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>776</width>
+    <width>750</width>
     <height>612</height>
    </rect>
   </property>
@@ -16,11 +16,24 @@
   <widget class="Scene" name="openGLWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>130</x>
      <y>10</y>
-     <width>761</width>
+     <width>611</width>
      <height>591</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>550</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Выход</string>
    </property>
   </widget>
  </widget>
@@ -33,5 +46,22 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>released()</signal>
+   <receiver>Widget</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>71</x>
+     <y>557</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>71</x>
+     <y>457</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

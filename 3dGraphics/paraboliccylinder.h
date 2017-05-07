@@ -4,11 +4,10 @@
 
 class ParabolicCylinder : public Graph
 {
-    float a;
-    float b;
+    float p;
     float y0;
 public:
-    ParabolicCylinder(float A, float B, float Y0);
+    ParabolicCylinder(float P, float Y0);
 };
 
 #endif // PARABOLICCYLINDER_H

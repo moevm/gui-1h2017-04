@@ -1,10 +1,9 @@
 #include "paraboliccylinder.h"
 
-ParabolicCylinder::ParabolicCylinder(float A, float B, float Y0) {
+ParabolicCylinder::ParabolicCylinder(float P,float Y0) {
     const int prec_x = 60, prec_y = 60;
     int i = 0, j = 0;
-    a = A;
-    b = B;
+    p = P;
     y0 = Y0;
     int pole = 400;
 
@@ -13,7 +12,7 @@ ParabolicCylinder::ParabolicCylinder(float A, float B, float Y0) {
         setX(i, x);
         for (double y = -pole; floor(y * 10000 + 0.5) / 10000 < pole; y += (double)pole * 2 / (double)prec_y) {
             setY(j, y);
-            setZ(i, j, b * pow(y + y0, 2) - 2 * a * x);
+            setZ(i, j, pow(y + y0, 2) - 2 * p * x);
             j++;
         }
         i++;

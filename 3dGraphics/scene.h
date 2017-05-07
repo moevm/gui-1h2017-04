@@ -2,6 +2,7 @@
 #define SCENE_H
 
 #include <QOpenGLWidget>
+#include <QMouseEvent>
 #include "coordaxes.h"
 #include "graph.h"
 #include "paraboliccylinder.h"
@@ -21,6 +22,13 @@ public:
     void initializeGL();
     void resize(int w, int h);
     void paintGL();
+    void mousePressEvent(QMouseEvent* pe);   // нажатие на клавишу мыши
+    void mouseMoveEvent(QMouseEvent* pe);    // перемещение мыши
+    void mouseReleaseEvent(QMouseEvent* pe); // отжатие клавиши мыши
+    void wheelEvent(QWheelEvent *);          // вращение колесика
+
+    int xRotation,yRotation,zRotation,scale; // переменные поворота и масштаба
+    QPoint mousePos; // переменная для запоминания позиции нажатия мышки
 };
 
 #endif // SCENE_H
