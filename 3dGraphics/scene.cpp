@@ -12,10 +12,6 @@ Scene::~Scene() {}
 
 void Scene::initializeGL() {
     qglClearColor(Qt::white);
-    //glEnable(GL_DEPTH_TEST);
-    //glShadeModel(GL_FLAT);
-    //glEnable(GL_CULL_FACE);
-    //glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
 
 void Scene::resize(int w, int h) {
@@ -28,7 +24,8 @@ void Scene::resize(int w, int h) {
 }
 
 void Scene::paintGL() {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    /*glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glPushMatrix();
     glTranslated(-0.6, -0.2, 0.0);
@@ -45,7 +42,7 @@ void Scene::paintGL() {
     TwoSheetedHyperboloid graph1(1.0/2, 1.0, 1.0/3, 5.0, 2.0, 0.0);
     graph1.draw();
 
-    glPopMatrix();
+    glPopMatrix();*/
 }
 
 // нажатие клавиши мыши
