@@ -1,33 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Widget</class>
- <widget class="QWidget" name="Widget">
+ <class>Graphics</class>
+ <widget class="QWidget" name="Graphics">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>750</width>
-    <height>612</height>
+    <height>508</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Widget</string>
   </property>
-  <widget class="Scene" name="openGLWidget">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>10</y>
-     <width>611</width>
-     <height>491</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>550</y>
+     <y>460</y>
      <width>111</width>
      <height>41</height>
     </rect>
@@ -35,6 +25,39 @@
    <property name="text">
     <string>Выход</string>
    </property>
+  </widget>
+  <widget class="QScrollArea" name="scrollArea">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>10</y>
+     <width>611</width>
+     <height>481</height>
+    </rect>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>609</width>
+      <height>479</height>
+     </rect>
+    </property>
+    <widget class="Scene" name="openGLWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>611</width>
+       <height>481</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
@@ -50,7 +73,7 @@
   <connection>
    <sender>pushButton</sender>
    <signal>released()</signal>
-   <receiver>Widget</receiver>
+   <receiver>Graphics</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
