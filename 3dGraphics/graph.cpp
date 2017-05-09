@@ -14,7 +14,6 @@ void Graph::draw() {
 
     glEnable(GL_ALPHA_TEST);
     glEnable(GL_BLEND);
-    glEnable(GL_DEPTH_TEST);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     for (int i = 0; i < prec_x - 1; i++) {
@@ -36,8 +35,6 @@ void Graph::draw() {
         }
         g -= 1.0 / prec_x;
     }
-
-    glDisable(GL_DEPTH_TEST);
     glDisable(GL_BLEND);
     glDisable(GL_ALPHA_TEST);
 }
