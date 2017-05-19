@@ -19,7 +19,8 @@ void CoordAxes::draw() {
 
     glBegin(GL_LINES);
     for ( float i = -pole; i < pole; i += 0.1 ) {
-        float j = 0.01; //ширина делений;
+        //float j = 0.01; //ширина делений; 1/1100
+        float j = 1.0 / 100; //ширина делений; 1/1100
         glVertex3f(-j, i, 0.0);
         glVertex3f(j, i, 0.0);
 

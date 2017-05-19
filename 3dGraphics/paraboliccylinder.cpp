@@ -1,6 +1,6 @@
 #include "paraboliccylinder.h"
 
-ParabolicCylinder::ParabolicCylinder(float P,float Y0) {
+ParabolicCylinder::ParabolicCylinder(float P, float Y0) {
     const int prec_x = 60, prec_y = 60;
     int i = 0, j = 0;
     p = P;

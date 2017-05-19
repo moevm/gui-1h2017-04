@@ -10,11 +10,11 @@ void Graph::draw() {
     // DRAWING.
     double r, g, b;
     r = g = b = 1.0f;
-    int qwe = 100;
+    int qwe = 1100;
 
-    glEnable(GL_ALPHA_TEST);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    //glEnable(GL_ALPHA_TEST);
+    //glEnable(GL_BLEND);
+    //glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     for (int i = 0; i < prec_x - 1; i++) {
         r = 1.0f;
@@ -35,8 +35,8 @@ void Graph::draw() {
         }
         g -= 1.0 / prec_x;
     }
-    glDisable(GL_BLEND);
-    glDisable(GL_ALPHA_TEST);
+    //glDisable(GL_BLEND);
+    //glDisable(GL_ALPHA_TEST);
 }
 
 void Graph::setX(int i, double x) {

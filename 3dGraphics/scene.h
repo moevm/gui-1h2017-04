@@ -26,9 +26,15 @@ public:
     void mousePressEvent(QMouseEvent* pe);   // нажатие на клавишу мыши
     void mouseMoveEvent(QMouseEvent* pe);    // перемещение мыши
     void mouseReleaseEvent(QMouseEvent* pe); // отжатие клавиши мыши
+    void setParam(int Index, float A, float B, float C, float X0, float Y0, float Z0);
 
+private:
     int xRotation, yRotation, zRotation, scale; // переменные поворота и масштаба
     QPoint mousePos; // переменная для запоминания позиции нажатия мышки
+    float a, b, c;
+    float x0, y0, z0;
+    int index;
+
 };
 
 #endif // SCENE_H
