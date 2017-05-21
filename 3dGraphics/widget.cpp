@@ -15,7 +15,7 @@ Widget::Widget(QWidget *parent) :
     ui->groupBox_7->setVisible(0);
     ui->groupBox_8->setVisible(0);
     ui->groupBox_9->setVisible(0);
-    //ui->groupBox_10->setVisible(0);
+    ui->groupBox_10->setVisible(0);
 
     regularExp();
     connect(ui->lineEdit_27, SIGNAL(textChanged(QString)), this, SLOT(button14Enabled()));

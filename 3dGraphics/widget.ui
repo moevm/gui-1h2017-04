@@ -1140,7 +1140,7 @@
      <x>10</x>
      <y>420</y>
      <width>501</width>
-     <height>81</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -1297,6 +1297,9 @@
      </item>
     </layout>
    </widget>
+   <zorder>pushButton_21</zorder>
+   <zorder>layoutWidget_8</zorder>
+   <zorder>groupBox</zorder>
   </widget>
   <widget class="QSplitter" name="splitter">
    <property name="geometry">
@@ -1386,6 +1389,19 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
   </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>420</y>
+     <width>501</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>GroupBox</string>
+   </property>
+  </widget>
   <zorder>splitter</zorder>
   <zorder>openGLWidget</zorder>
   <zorder>groupBox_7</zorder>
@@ -1397,6 +1413,7 @@ p, li { white-space: pre-wrap; }
   <zorder>groupBox_4</zorder>
   <zorder>groupBox_5</zorder>
   <zorder>groupBox_6</zorder>
+  <zorder>groupBox</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
