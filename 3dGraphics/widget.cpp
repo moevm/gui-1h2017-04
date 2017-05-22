@@ -357,9 +357,10 @@ void Widget::on_pushButton_14_clicked()
 void Widget::on_pushButton_16_clicked()
 {
     MatchParser pars;
-    pars.setVariable("x", 3.0);
-    pars.setVariable("y", 1.0);
+    pars.setVariable("x", 4.0);
+    pars.setVariable("y", 2.0);
     double res = pars.Parse(ui->lineEdit->text());
+    pars.~MatchParser();
     //ui->openGLWidget->setParam();
     //ui->openGLWidget->update();
 }

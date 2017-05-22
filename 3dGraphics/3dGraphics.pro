@@ -39,7 +39,8 @@ SOURCES += main.cpp\
     onesheetedhyperboloid.cpp \
     ellipsoid.cpp \
     result.cpp \
-    matchparser.cpp
+    matchparser.cpp \
+    support.cpp
 
 HEADERS  += widget.h \
     scene.h \
@@ -55,8 +56,10 @@ HEADERS  += widget.h \
     onesheetedhyperboloid.h \
     ellipsoid.h \
     result.h \
-    matchparser.h
+    matchparser.h \
+    support.h
 
-FORMS    += widget.ui
+FORMS    += widget.ui \
+    support.ui
 
 STATECHARTS +=

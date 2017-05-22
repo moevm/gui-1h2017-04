@@ -181,7 +181,9 @@ public:
     {
         return flag;
     }
-
+    ~MatchParser()
+    {
+    }
 
 };
 #endif // MATCHPARSER_H
