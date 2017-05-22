@@ -1,6 +1,6 @@
 #include "widget.h"
 #include "ui_widget.h"
-
+#include "matchparser.h"
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Widget)
@@ -93,6 +93,7 @@ void Widget::groupBoxVisibility(int comboIndex)
             ui->groupBox_7->setVisible(0);
             ui->groupBox_8->setVisible(0);
             ui->groupBox_9->setVisible(0);
+            ui->groupBox_10->setVisible(0);
 
             connect(ui->lineEdit_27, SIGNAL(textChanged(QString)), this, SLOT(button14Enabled()));
             connect(ui->lineEdit_28, SIGNAL(textChanged(QString)), this, SLOT(button14Enabled()));
@@ -108,7 +109,7 @@ void Widget::groupBoxVisibility(int comboIndex)
                 ui->groupBox_7->setVisible(0);
                 ui->groupBox_8->setVisible(0);
                 ui->groupBox_9->setVisible(0);
-
+                ui->groupBox_10->setVisible(0);
                 connect(ui->lineEdit_23, SIGNAL(textChanged(QString)), this, SLOT(button15Enabled()));
                 connect(ui->lineEdit_24, SIGNAL(textChanged(QString)), this, SLOT(button15Enabled()));
                 connect(ui->lineEdit_25, SIGNAL(textChanged(QString)), this, SLOT(button15Enabled()));
@@ -125,7 +126,7 @@ void Widget::groupBoxVisibility(int comboIndex)
                 ui->groupBox_7->setVisible(0);
                 ui->groupBox_8->setVisible(0);
                 ui->groupBox_9->setVisible(0);
-
+                ui->groupBox_10->setVisible(0);
                 connect(ui->lineEdit_42, SIGNAL(textChanged(QString)), this, SLOT(button18Enabled()));
                 connect(ui->lineEdit_41, SIGNAL(textChanged(QString)), this, SLOT(button18Enabled()));
                 connect(ui->lineEdit_44, SIGNAL(textChanged(QString)), this, SLOT(button18Enabled()));
@@ -142,7 +143,7 @@ void Widget::groupBoxVisibility(int comboIndex)
                 ui->groupBox_7->setVisible(0);
                 ui->groupBox_8->setVisible(0);
                 ui->groupBox_9->setVisible(0);
-
+                ui->groupBox_10->setVisible(0);
                 connect(ui->lineEdit_46, SIGNAL(textChanged(QString)), this, SLOT(button19Enabled()));
                 connect(ui->lineEdit_45, SIGNAL(textChanged(QString)), this, SLOT(button19Enabled()));
                 connect(ui->lineEdit_48, SIGNAL(textChanged(QString)), this, SLOT(button19Enabled()));
@@ -159,7 +160,7 @@ void Widget::groupBoxVisibility(int comboIndex)
                 ui->groupBox_7->setVisible(0);
                 ui->groupBox_8->setVisible(0);
                 ui->groupBox_9->setVisible(0);
-
+                ui->groupBox_10->setVisible(0);
                 connect(ui->lineEdit_49, SIGNAL(textChanged(QString)), this, SLOT(button20Enabled()));
                 connect(ui->lineEdit_50, SIGNAL(textChanged(QString)), this, SLOT(button20Enabled()));
                 connect(ui->lineEdit_51, SIGNAL(textChanged(QString)), this, SLOT(button20Enabled()));
@@ -177,7 +178,7 @@ void Widget::groupBoxVisibility(int comboIndex)
                 ui->groupBox_7->setVisible(0);
                 ui->groupBox_8->setVisible(0);
                 ui->groupBox_9->setVisible(0);
-
+                ui->groupBox_10->setVisible(0);
                 connect(ui->lineEdit_54, SIGNAL(textChanged(QString)), this, SLOT(button21Enabled()));
                 connect(ui->lineEdit_55, SIGNAL(textChanged(QString)), this, SLOT(button21Enabled()));
                 connect(ui->lineEdit_56, SIGNAL(textChanged(QString)), this, SLOT(button21Enabled()));
@@ -234,13 +235,27 @@ void Widget::groupBoxVisibility(int comboIndex)
                 ui->groupBox_7->setVisible(0);
                 ui->groupBox_8->setVisible(0);
                 ui->groupBox_9->setVisible(1);
-
+                ui->groupBox_10->setVisible(0);
                 connect(ui->lineEdit_17, SIGNAL(textChanged(QString)), this, SLOT(button13Enabled()));
                 connect(ui->lineEdit_18, SIGNAL(textChanged(QString)), this, SLOT(button13Enabled()));
                 connect(ui->lineEdit_19, SIGNAL(textChanged(QString)), this, SLOT(button13Enabled()));
                 connect(ui->lineEdit_20, SIGNAL(textChanged(QString)), this, SLOT(button13Enabled()));
                 connect(ui->lineEdit_21, SIGNAL(textChanged(QString)), this, SLOT(button13Enabled()));
                 connect(ui->lineEdit_22, SIGNAL(textChanged(QString)), this, SLOT(button13Enabled()));
+                break;
+        }
+        case 7: {//9
+                ui->groupBox_1->setVisible(0);
+                ui->groupBox_2->setVisible(0);
+                ui->groupBox_3->setVisible(0);
+                ui->groupBox_4->setVisible(0);
+                ui->groupBox_5->setVisible(0);
+                ui->groupBox_6->setVisible(0);
+                ui->groupBox_7->setVisible(0);
+                ui->groupBox_8->setVisible(0);
+                ui->groupBox_9->setVisible(0);
+                ui->groupBox_10->setVisible(1);
+                connect(ui->lineEdit, SIGNAL(textChanged(QString)), this, SLOT(button16Enabled()));
                 break;
         }
 
@@ -251,6 +266,11 @@ void Widget::button14Enabled()
 {
     ui->pushButton_14->setEnabled(ui->lineEdit_27->hasAcceptableInput() &&
                                   ui->lineEdit_28->hasAcceptableInput());
+}
+
+void Widget::button16Enabled()
+{
+    ui->pushButton_16->setEnabled(true);
 }
 
 void Widget::button15Enabled()
@@ -332,6 +352,16 @@ void Widget::on_pushButton_14_clicked()
                                0.0, check(ui->lineEdit_28->text()), 0.0,
                                0.0, check(ui->lineEdit_27->text()), 0.0);
     ui->openGLWidget->update();
+}
+
+void Widget::on_pushButton_16_clicked()
+{
+    MatchParser pars;
+    pars.setVariable("x", 3.0);
+    pars.setVariable("y", 1.0);
+    double res = pars.Parse(ui->lineEdit->text());
+    //ui->openGLWidget->setParam();
+    //ui->openGLWidget->update();
 }
 
 void Widget::on_pushButton_15_clicked()

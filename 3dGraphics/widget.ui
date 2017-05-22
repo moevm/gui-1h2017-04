@@ -1297,9 +1297,6 @@
      </item>
     </layout>
    </widget>
-   <zorder>pushButton_21</zorder>
-   <zorder>layoutWidget_8</zorder>
-   <zorder>groupBox</zorder>
   </widget>
   <widget class="QSplitter" name="splitter">
    <property name="geometry">
@@ -1361,6 +1358,11 @@
       <string>x^2 + y^2 - z^2 = -1</string>
      </property>
     </item>
+    <item>
+     <property name="text">
+      <string>Произвольная функция</string>
+     </property>
+    </item>
    </widget>
    <widget class="QTextBrowser" name="textBrowser">
     <property name="sizePolicy">
@@ -1389,7 +1391,7 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
   </widget>
-  <widget class="QGroupBox" name="groupBox">
+  <widget class="QGroupBox" name="groupBox_10">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -1399,8 +1401,40 @@ p, li { white-space: pre-wrap; }
     </rect>
    </property>
    <property name="title">
-    <string>GroupBox</string>
+    <string/>
    </property>
+   <widget class="QLabel" name="label_26">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>z(x,y)=</string>
+    </property>
+   </widget>
+   <widget class="QSplitter" name="splitter_2">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>30</y>
+      <width>208</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QLineEdit" name="lineEdit"/>
+    <widget class="QPushButton" name="pushButton_16">
+     <property name="text">
+      <string>Ввод</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <zorder>splitter</zorder>
   <zorder>openGLWidget</zorder>
@@ -1413,7 +1447,7 @@ p, li { white-space: pre-wrap; }
   <zorder>groupBox_4</zorder>
   <zorder>groupBox_5</zorder>
   <zorder>groupBox_6</zorder>
-  <zorder>groupBox</zorder>
+  <zorder>groupBox_10</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

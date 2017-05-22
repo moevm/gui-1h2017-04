@@ -20,6 +20,7 @@ public:
 private slots:
     void groupBoxVisibility(int);
     void button14Enabled();
+    void button16Enabled();
     void button15Enabled();
     void button18Enabled();
     void button19Enabled();
@@ -29,6 +30,7 @@ private slots:
     void button12Enabled();
     void button13Enabled();
     void on_pushButton_14_clicked();
+    void on_pushButton_16_clicked();
     void on_pushButton_15_clicked();
     void on_pushButton_18_clicked();
     void on_pushButton_19_clicked();

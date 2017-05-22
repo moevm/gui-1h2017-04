@@ -158,7 +158,11 @@ public:
     QComboBox *comboBox;
     QTextBrowser *textBrowser;
     QPushButton *pushButton;
-    QGroupBox *groupBox;
+    QGroupBox *groupBox_10;
+    QLabel *label_26;
+    QSplitter *splitter_2;
+    QLineEdit *lineEdit;
+    QPushButton *pushButton_16;
 
     void setupUi(QWidget *Widget)
     {
@@ -796,8 +800,6 @@ public:
 
         horizontalLayout_11->addWidget(label_56);
 
-        pushButton_21->raise();
-        layoutWidget_8->raise();
         splitter = new QSplitter(Widget);
         splitter->setObjectName(QStringLiteral("splitter"));
         splitter->setGeometry(QRect(520, 30, 161, 471));
@@ -819,9 +821,22 @@ public:
         sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
         pushButton->setSizePolicy(sizePolicy);
         splitter->addWidget(pushButton);
-        groupBox = new QGroupBox(Widget);
-        groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(10, 420, 501, 81));
+        groupBox_10 = new QGroupBox(Widget);
+        groupBox_10->setObjectName(QStringLiteral("groupBox_10"));
+        groupBox_10->setGeometry(QRect(10, 420, 501, 81));
+        label_26 = new QLabel(groupBox_10);
+        label_26->setObjectName(QStringLiteral("label_26"));
+        label_26->setGeometry(QRect(10, 30, 47, 13));
+        splitter_2 = new QSplitter(groupBox_10);
+        splitter_2->setObjectName(QStringLiteral("splitter_2"));
+        splitter_2->setGeometry(QRect(60, 30, 208, 23));
+        splitter_2->setOrientation(Qt::Horizontal);
+        lineEdit = new QLineEdit(splitter_2);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        splitter_2->addWidget(lineEdit);
+        pushButton_16 = new QPushButton(splitter_2);
+        pushButton_16->setObjectName(QStringLiteral("pushButton_16"));
+        splitter_2->addWidget(pushButton_16);
         splitter->raise();
         openGLWidget->raise();
         groupBox_7->raise();
@@ -833,7 +848,7 @@ public:
         groupBox_4->raise();
         groupBox_5->raise();
         groupBox_6->raise();
-        groupBox->raise();
+        groupBox_10->raise();
         QWidget::setTabOrder(comboBox, textBrowser);
         QWidget::setTabOrder(textBrowser, lineEdit_5);
         QWidget::setTabOrder(lineEdit_5, pushButton_11);
@@ -1012,6 +1027,7 @@ public:
          << QApplication::translate("Widget", "x^2 - y^2 = 2z", Q_NULLPTR)
          << QApplication::translate("Widget", "x^2 + y^2 - z^2 = 0", Q_NULLPTR)
          << QApplication::translate("Widget", "x^2 + y^2 - z^2 = -1", Q_NULLPTR)
+         << QApplication::translate("Widget", "\320\237\321\200\320\276\320\270\320\267\320\262\320\276\320\273\321\214\320\275\320\260\321\217 \321\204\321\203\320\275\320\272\321\206\320\270\321\217", Q_NULLPTR)
         );
         textBrowser->setHtml(QApplication::translate("Widget", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -1019,7 +1035,9 @@ public:
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">\320\260\320\274\320\260\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200</span></p></body></html>", Q_NULLPTR));
         pushButton->setText(QApplication::translate("Widget", "\320\222\321\213\321\205\320\276\320\264", Q_NULLPTR));
-        groupBox->setTitle(QApplication::translate("Widget", "GroupBox", Q_NULLPTR));
+        groupBox_10->setTitle(QString());
+        label_26->setText(QApplication::translate("Widget", "z(x,y)=", Q_NULLPTR));
+        pushButton_16->setText(QApplication::translate("Widget", "\320\222\320\262\320\276\320\264", Q_NULLPTR));
     } // retranslateUi
 
 };
