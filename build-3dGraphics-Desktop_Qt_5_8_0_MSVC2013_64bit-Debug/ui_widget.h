@@ -20,8 +20,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSplitter>
-#include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QWidget>
 #include "scene.h"
 
@@ -154,15 +153,19 @@ public:
     QLabel *label_55;
     QLineEdit *lineEdit_59;
     QLabel *label_56;
-    QSplitter *splitter;
-    QComboBox *comboBox;
-    QTextBrowser *textBrowser;
     QPushButton *pushButton;
-    QGroupBox *groupBox_10;
+    QPushButton *pushButton_2;
+    QGroupBox *groupBox;
     QLabel *label_26;
-    QSplitter *splitter_2;
-    QLineEdit *lineEdit;
+    QLabel *label_27;
+    QComboBox *comboBox;
+    QSlider *alpha;
+    QSlider *scale;
+    QLabel *label_28;
+    QPushButton *pushButton_3;
+    QGroupBox *groupBox_10;
     QPushButton *pushButton_16;
+    QLineEdit *lineEdit;
 
     void setupUi(QWidget *Widget)
     {
@@ -171,7 +174,7 @@ public:
         Widget->resize(690, 510);
         openGLWidget = new Scene(Widget);
         openGLWidget->setObjectName(QStringLiteral("openGLWidget"));
-        openGLWidget->setGeometry(QRect(10, 10, 501, 401));
+        openGLWidget->setGeometry(QRect(10, 10, 491, 401));
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -720,7 +723,7 @@ public:
 
         groupBox_6 = new QGroupBox(Widget);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
-        groupBox_6->setGeometry(QRect(10, 420, 501, 71));
+        groupBox_6->setGeometry(QRect(10, 420, 501, 81));
         sizePolicy.setHeightForWidth(groupBox_6->sizePolicy().hasHeightForWidth());
         groupBox_6->setSizePolicy(sizePolicy);
         pushButton_21 = new QPushButton(groupBox_6);
@@ -800,57 +803,60 @@ public:
 
         horizontalLayout_11->addWidget(label_56);
 
-        splitter = new QSplitter(Widget);
-        splitter->setObjectName(QStringLiteral("splitter"));
-        splitter->setGeometry(QRect(520, 30, 161, 471));
-        sizePolicy.setHeightForWidth(splitter->sizePolicy().hasHeightForWidth());
-        splitter->setSizePolicy(sizePolicy);
-        splitter->setOrientation(Qt::Vertical);
-        comboBox = new QComboBox(splitter);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-        sizePolicy.setHeightForWidth(comboBox->sizePolicy().hasHeightForWidth());
-        comboBox->setSizePolicy(sizePolicy);
-        splitter->addWidget(comboBox);
-        textBrowser = new QTextBrowser(splitter);
-        textBrowser->setObjectName(QStringLiteral("textBrowser"));
-        sizePolicy.setHeightForWidth(textBrowser->sizePolicy().hasHeightForWidth());
-        textBrowser->setSizePolicy(sizePolicy);
-        splitter->addWidget(textBrowser);
-        pushButton = new QPushButton(splitter);
+        pushButton = new QPushButton(Widget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(530, 450, 150, 41));
         sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
         pushButton->setSizePolicy(sizePolicy);
-        splitter->addWidget(pushButton);
+        pushButton_2 = new QPushButton(Widget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(530, 330, 150, 41));
+        groupBox = new QGroupBox(Widget);
+        groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBox->setGeometry(QRect(510, 10, 171, 291));
+        label_26 = new QLabel(groupBox);
+        label_26->setObjectName(QStringLiteral("label_26"));
+        label_26->setGeometry(QRect(30, 10, 101, 21));
+        label_27 = new QLabel(groupBox);
+        label_27->setObjectName(QStringLiteral("label_27"));
+        label_27->setGeometry(QRect(30, 120, 101, 21));
+        comboBox = new QComboBox(groupBox);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox->setGeometry(QRect(10, 40, 150, 41));
+        sizePolicy.setHeightForWidth(comboBox->sizePolicy().hasHeightForWidth());
+        comboBox->setSizePolicy(sizePolicy);
+        alpha = new QSlider(groupBox);
+        alpha->setObjectName(QStringLiteral("alpha"));
+        alpha->setGeometry(QRect(10, 150, 151, 22));
+        alpha->setMinimum(-10);
+        alpha->setMaximum(0);
+        alpha->setSingleStep(1);
+        alpha->setSliderPosition(-10);
+        alpha->setOrientation(Qt::Horizontal);
+        scale = new QSlider(groupBox);
+        scale->setObjectName(QStringLiteral("scale"));
+        scale->setGeometry(QRect(10, 240, 150, 22));
+        scale->setMinimum(1);
+        scale->setMaximum(4);
+        scale->setOrientation(Qt::Horizontal);
+        label_28 = new QLabel(groupBox);
+        label_28->setObjectName(QStringLiteral("label_28"));
+        label_28->setGeometry(QRect(30, 210, 101, 21));
+        pushButton_3 = new QPushButton(Widget);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(530, 390, 150, 41));
         groupBox_10 = new QGroupBox(Widget);
         groupBox_10->setObjectName(QStringLiteral("groupBox_10"));
         groupBox_10->setGeometry(QRect(10, 420, 501, 81));
-        label_26 = new QLabel(groupBox_10);
-        label_26->setObjectName(QStringLiteral("label_26"));
-        label_26->setGeometry(QRect(10, 30, 47, 13));
-        splitter_2 = new QSplitter(groupBox_10);
-        splitter_2->setObjectName(QStringLiteral("splitter_2"));
-        splitter_2->setGeometry(QRect(60, 30, 208, 23));
-        splitter_2->setOrientation(Qt::Horizontal);
-        lineEdit = new QLineEdit(splitter_2);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        splitter_2->addWidget(lineEdit);
-        pushButton_16 = new QPushButton(splitter_2);
+        sizePolicy.setHeightForWidth(groupBox_10->sizePolicy().hasHeightForWidth());
+        groupBox_10->setSizePolicy(sizePolicy);
+        pushButton_16 = new QPushButton(groupBox_10);
         pushButton_16->setObjectName(QStringLiteral("pushButton_16"));
-        splitter_2->addWidget(pushButton_16);
-        splitter->raise();
-        openGLWidget->raise();
-        groupBox_7->raise();
-        groupBox_8->raise();
-        groupBox_9->raise();
-        groupBox_1->raise();
-        groupBox_2->raise();
-        groupBox_3->raise();
-        groupBox_4->raise();
-        groupBox_5->raise();
-        groupBox_6->raise();
-        groupBox_10->raise();
-        QWidget::setTabOrder(comboBox, textBrowser);
-        QWidget::setTabOrder(textBrowser, lineEdit_5);
+        pushButton_16->setGeometry(QRect(360, 38, 120, 37));
+        lineEdit = new QLineEdit(groupBox_10);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(208, 11, 211, 20));
+        lineEdit->setMinimumSize(QSize(31, 20));
         QWidget::setTabOrder(lineEdit_5, pushButton_11);
         QWidget::setTabOrder(pushButton_11, pushButton_12);
         QWidget::setTabOrder(pushButton_12, pushButton_13);
@@ -860,8 +866,7 @@ public:
         QWidget::setTabOrder(pushButton_18, pushButton_19);
         QWidget::setTabOrder(pushButton_19, pushButton_20);
         QWidget::setTabOrder(pushButton_20, pushButton_21);
-        QWidget::setTabOrder(pushButton_21, pushButton);
-        QWidget::setTabOrder(pushButton, lineEdit_6);
+        QWidget::setTabOrder(pushButton_21, lineEdit_6);
         QWidget::setTabOrder(lineEdit_6, lineEdit_7);
         QWidget::setTabOrder(lineEdit_7, lineEdit_8);
         QWidget::setTabOrder(lineEdit_8, lineEdit_9);
@@ -1018,6 +1023,11 @@ public:
         label_55->setText(QApplication::translate("Widget", "(z + ", Q_NULLPTR));
         lineEdit_59->setText(QApplication::translate("Widget", "0", Q_NULLPTR));
         label_56->setText(QApplication::translate("Widget", ")^2 = 0", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("Widget", "\320\222\321\213\321\205\320\276\320\264", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("Widget", "\320\241\320\277\321\200\320\260\320\262\320\272\320\260", Q_NULLPTR));
+        groupBox->setTitle(QString());
+        label_26->setText(QApplication::translate("Widget", "\320\222\321\213\320\261\320\276\321\200 \321\204\321\203\320\275\320\272\321\206\320\270\320\270", Q_NULLPTR));
+        label_27->setText(QApplication::translate("Widget", "\320\237\321\200\320\276\320\267\321\200\320\260\321\207\320\275\320\276\321\201\321\202\321\214", Q_NULLPTR));
         comboBox->clear();
         comboBox->insertItems(0, QStringList()
          << QApplication::translate("Widget", "y^2 = 2x", Q_NULLPTR)
@@ -1027,17 +1037,13 @@ public:
          << QApplication::translate("Widget", "x^2 - y^2 = 2z", Q_NULLPTR)
          << QApplication::translate("Widget", "x^2 + y^2 - z^2 = 0", Q_NULLPTR)
          << QApplication::translate("Widget", "x^2 + y^2 - z^2 = -1", Q_NULLPTR)
-         << QApplication::translate("Widget", "\320\237\321\200\320\276\320\270\320\267\320\262\320\276\320\273\321\214\320\275\320\260\321\217 \321\204\321\203\320\275\320\272\321\206\320\270\321\217", Q_NULLPTR)
+         << QApplication::translate("Widget", "\320\237\321\200\320\276\320\270\320\267\320\262\320\276\320\273\321\214\320\275\320\260\320\260 \321\204\321\203\320\275\320\272\321\206\320\270\321\217", Q_NULLPTR)
         );
-        textBrowser->setHtml(QApplication::translate("Widget", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">\320\260\320\274\320\260\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200\321\200</span></p></body></html>", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("Widget", "\320\222\321\213\321\205\320\276\320\264", Q_NULLPTR));
+        label_28->setText(QApplication::translate("Widget", "\320\234\320\260\321\201\321\210\321\202\320\260\320\261", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("Widget", "\320\241\320\273\321\203\320\266\320\261\320\260 \320\277\320\276\320\264\320\264\320\265\321\200\320\266\320\272\320\270", Q_NULLPTR));
         groupBox_10->setTitle(QString());
-        label_26->setText(QApplication::translate("Widget", "z(x,y)=", Q_NULLPTR));
         pushButton_16->setText(QApplication::translate("Widget", "\320\222\320\262\320\276\320\264", Q_NULLPTR));
+        lineEdit->setText(QString());
     } // retranslateUi
 
 };

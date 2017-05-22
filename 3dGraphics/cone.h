@@ -11,7 +11,7 @@ class Cone : public Graph
     float y0;
     float z0;
 public:
-    Cone(float A, float B, float C, float X0, float Y0, float Z0);
+    Cone(float A, float B, float C, float X0, float Y0, float Z0, float Alpha);
 };
 
 #endif // CONE_H

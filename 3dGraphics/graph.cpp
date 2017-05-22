@@ -5,21 +5,21 @@ Graph::Graph() {
 
 Graph::~Graph(){}
 
-void Graph::draw() {
+void Graph::draw(float Alpha) {
     const int prec_x = 60, prec_y = 60;
     // DRAWING.
     double r, g, b;
     r = g = b = 1.0f;
-    int qwe = 1100;
+    int qwe = 1500;
 
-    //glEnable(GL_ALPHA_TEST);
-    //glEnable(GL_BLEND);
-    //glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_ALPHA_TEST);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     for (int i = 0; i < prec_x - 1; i++) {
         r = 1.0f;
         for (int j = 0; j < prec_y - 1; j++) {
-                glColor4d(r, g, b, 0.5);
+                glColor4d(r, g, b, Alpha);
                 glBegin(GL_TRIANGLES);
 
                 glVertex3d(X[i] / qwe, Z[i][j] / qwe, Y[j] / qwe);
@@ -35,8 +35,8 @@ void Graph::draw() {
         }
         g -= 1.0 / prec_x;
     }
-    //glDisable(GL_BLEND);
-    //glDisable(GL_ALPHA_TEST);
+    glDisable(GL_BLEND);
+    glDisable(GL_ALPHA_TEST);
 }
 
 void Graph::setX(int i, double x) {

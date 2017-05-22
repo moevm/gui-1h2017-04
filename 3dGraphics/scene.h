@@ -15,6 +15,7 @@
 #include "ellipsoid.h"
 #include "onesheetedhyperboloid.h"
 #include "twosheetedhyperboloid.h"
+#include "randgraph.h"
 
 class Scene : public QGLWidget/*, public QOpenGLFunctions*/ {
 public:
@@ -27,14 +28,18 @@ public:
     void mouseMoveEvent(QMouseEvent* pe);    // перемещение мыши
     void mouseReleaseEvent(QMouseEvent* pe); // отжатие клавиши мыши
     void setParam(int Index, float A, float B, float C, float X0, float Y0, float Z0);
+    void setAlpha(float Alpha);
+    void setScale(float Scale);
+    void setValue(int Index, QString Value);
 
 private:
-    int xRotation, yRotation, zRotation, scale; // переменные поворота и масштаба
+    int xRotation, yRotation, zRotation; // переменные поворота
     QPoint mousePos; // переменная для запоминания позиции нажатия мышки
     float a, b, c;
     float x0, y0, z0;
     int index;
-
+    float alpha, scale;
+    QString value;
 };
 
 #endif // SCENE_H

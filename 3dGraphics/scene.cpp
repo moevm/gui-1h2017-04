@@ -6,6 +6,7 @@ Scene::Scene( QWidget *parent ) :
     yRotation = -20;
     zRotation = 0;
     scale = 1;
+    alpha = 1;
     index = -1;
 }
 
@@ -51,7 +52,7 @@ void Scene::paintGL() {
 
     glPushMatrix();
     glTranslated(-0.6, -0.2, 0.0);
-    //glScalef(scale, scale, scale);
+    glScalef(scale, scale, scale);
     glRotatef(xRotation, 1.0f, 0.0f, 0.0f);
     glRotatef(yRotation, 0.0f, 1.0f, 0.0f);
     glRotatef(zRotation, 0.0f, 0.0f, 1.0f);
@@ -62,49 +63,54 @@ void Scene::paintGL() {
     switch (index) {
         case 0: {
             ParabolicCylinder graph(b, y0);
-            graph.draw();
+            graph.draw(alpha);
             break;
         }
         case 1: {
             EllipticalCylinder graph(a, b, x0, y0);
-            graph.draw();
+            graph.draw(alpha);
             break;
         }
         case 2: {
             HyperbolicCylinder graph(a, b, x0, y0);
-            graph.draw();
+            graph.draw(alpha);
             break;
         }
         case 3: {
             EllipticParaboloid graph(a, b, x0, y0);
-            graph.draw();
+            graph.draw(alpha);
             break;
         }
         case 4: {
             HyperbolicParaboloid graph(a, b, c, x0, y0);
-            graph.draw();
+            graph.draw(alpha);
             break;
         }
         case 5: {
-            Cone graph(a, b, c, x0, y0, z0);
-            graph.draw();
+            Cone graph(a, b, c, x0, y0, z0, alpha);
+            graph.draw(alpha);
             break;
         }
         /*case 6: {
-            Ellipsoid graph(a, b, c, x0, y0, z0);
-            graph.draw();
+            Ellipsoid graph(a, b, c, x0, y0, z0, alpha);
+            graph.draw(alpha);
             break;
-        }*/
-        /*case 7: {
-            OneSheetedHyperboloid graph(a, b, c, x0, y0, z0);
-            graph.draw();
+        }
+        case 7: {
+            OneSheetedHyperboloid graph(a, b, c, x0, y0, z0, alpha);
+            graph.draw(alpha);
             break;
         }*/
         case 6: { //8
-            TwoSheetedHyperboloid graph(a, b, c, x0, y0, z0);
-            graph.draw();
+            TwoSheetedHyperboloid graph(a, b, c, x0, y0, z0, alpha);
+            graph.draw(alpha);
             break;
         }
+        case 7: { //9
+            RandGraph graph(value);
+            graph.draw(alpha);
+            break;
+    }
         default:
             break;
     }
@@ -138,3 +144,15 @@ void Scene::setParam(int Index, float A, float B, float C, float X0, float Y0, f
     z0 = Z0;
 }
 
+void Scene::setAlpha(float Alpha) {
+    alpha = Alpha;
+}
+
+void Scene::setScale(float Scale) {
+    scale = Scale;
+}
+
+void Scene::setValue(int Index, QString Value) {
+    index = Index;
+    value = Value;
+}

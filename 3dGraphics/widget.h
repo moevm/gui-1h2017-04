@@ -20,7 +20,6 @@ public:
 private slots:
     void groupBoxVisibility(int);
     void button14Enabled();
-    void button16Enabled();
     void button15Enabled();
     void button18Enabled();
     void button19Enabled();
@@ -29,8 +28,9 @@ private slots:
     void button11Enabled();
     void button12Enabled();
     void button13Enabled();
-    void on_pushButton_14_clicked();
+    void button16Enabled();
     void on_pushButton_16_clicked();
+    void on_pushButton_14_clicked();
     void on_pushButton_15_clicked();
     void on_pushButton_18_clicked();
     void on_pushButton_19_clicked();
@@ -39,6 +39,8 @@ private slots:
     void on_pushButton_11_clicked();
     void on_pushButton_12_clicked();
     void on_pushButton_13_clicked();
+    void setAlpha();
+    void setScale();
 
 private:
     Ui::Widget *ui;

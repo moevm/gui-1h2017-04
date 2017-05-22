@@ -7,7 +7,8 @@ class MatchParser
 {
 private:
     QHash <QString, double> variables;
-    int flag=0;
+    bool flag=1;
+    bool flag2=1;
     QString putError;
 
     Result PlusMinus(QString s)
@@ -19,7 +20,7 @@ private:
             if (!(current.rest[0] == '+' || current.rest[0] == '-')) break;
 
             QChar sign = current.rest[0];
-            QString next = current.rest.mid(1, current.rest.length()-1);
+            QString next = current.rest.mid(1);
             current = MulDiv(next);
             if (sign == '+') {
                 acc += current.acc;
@@ -35,11 +36,11 @@ private:
     {
         QChar zeroChar = s[0];
         if (zeroChar == '(') {
-            Result r = PlusMinus(s.mid(1, s.length()-1));
+            Result r = PlusMinus(s.mid(1));
             if (!r.rest.isEmpty() && r.rest[0] == ')') {
-                r.rest = r.rest.mid(1, r.rest.length()-1);
+                r.rest = r.rest.mid(1);
             } else {
-                flag=1;
+                flag=0;
                 putError ="Ошибка ввода";
             }
             return r;
@@ -59,7 +60,7 @@ private:
         }
         if (!f.isEmpty()) { // если что-нибудь нашли
             if ( s.length() > i && s[i] == '(') { // и следующий символ скобка значит - это функция
-                Result r = Bracket(s.mid(f.length(),f.length()));
+                Result r = Bracket(s.mid(f.length()));
                 return processFunction(f, r);
             } else { // иначе - это переменная
                 Result a(getVariable(f), s.mid(f.length()));
@@ -108,11 +109,11 @@ private:
         while (i < s.length() && (s[i].isDigit() || s[i] == '.')) {
             // но также проверям, что в числе может быть только одна точка!
             if (s[i] == '.' && ++dot_cnt > 1) {
-                //throw new Exception("not valid number '" + s.mid(0, i + 1) + "'");
+                flag=0;//throw new Exception("not valid number '" + s.mid(0, i + 1) + "'");
             }
             i++;
         }
-        if( i == 0 ){ // что-либо похожее на число мы не нашли
+        if( i == 0 ){ flag=0;// что-либо похожее на число мы не нашли
            // throw new Exception( "can't get valid number in '" + s + "'" );
         }
 
@@ -135,13 +136,15 @@ private:
         } else if (func=="tan") {
             b=tan(r.acc*pi/180);
         } else if (func=="log") {
-            b=log(r.acc);
+            if (r.acc>0) {b=log(r.acc);}
+            else {b=1;flag2=0;}
         } else if (func=="sqrt") {
-            b=sqrt(r.acc);
+            if(r.acc>=0) {b=sqrt(r.acc);}
+            else {b=1;flag2=0;}
         } else if (func=="sqr") {
             b=pow(r.acc,2);
         } else {
-            flag=1;
+            flag=0;
             putError="Ошибка ввода";
         }
         Result a(b,r.rest);
@@ -161,7 +164,7 @@ public:
     double getVariable(QString variableName)
     {
         if (!variables.contains(variableName)) {
-            flag=1;
+            flag=0;
             putError="Ошибка ввода";
             return 0.0;
         }
@@ -172,14 +175,18 @@ public:
     {
         Result result = PlusMinus(s);
         if (!result.rest.isEmpty()) {
-            flag=1;
+            flag=0;
             putError ="Ошибка ввода";
         }
         return result.acc;
     }
-    int getFlag()
+    bool getFlag()
     {
         return flag;
+    }
+    bool getFlag2()
+    {
+        return flag2;
     }
     ~MatchParser()
     {

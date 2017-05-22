@@ -1,8 +1,9 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 #include <QOpenGLWidget>
+//#include "scene.h"
 
-class Graph
+class Graph //: public Scene
 {
     double X[60];
     double Y[60];
@@ -10,7 +11,7 @@ class Graph
 public:
     Graph();
     ~Graph();
-    void draw();
+    void draw(float Alpha);
     void setX(int i, double x);
     void setY(int i, double y);
     void setZ(int i, int j, double z);

@@ -1,6 +1,6 @@
 #include "onesheetedhyperboloid.h"
 
-OneSheetedHyperboloid::OneSheetedHyperboloid(float A, float B, float C, float X0, float Y0, float Z0) {
+OneSheetedHyperboloid::OneSheetedHyperboloid(float A, float B, float C, float X0, float Y0, float Z0, float Alpha) {
     const int prec_x = 60, prec_y = 60;
     int i = 0, j = 0;
     a = A;
@@ -25,7 +25,7 @@ OneSheetedHyperboloid::OneSheetedHyperboloid(float A, float B, float C, float X0
         i++;
     }
 
-    draw();
+    draw(Alpha);
 
     i = 0;
     for (double x = -pole; floor(x * qwe + 0.5) / qwe < pole; x += (double)pole * 2 / (double)prec_x) {

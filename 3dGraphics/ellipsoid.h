@@ -11,7 +11,7 @@ class Ellipsoid : public Graph
     float y0;
     float z0;
 public:
-    Ellipsoid(float A, float B, float C, float X0, float Y0, float Z0);
+    Ellipsoid(float A, float B, float C, float X0, float Y0, float Z0, float Alpha);
 };
 
 #endif // ELLIPSOID_H

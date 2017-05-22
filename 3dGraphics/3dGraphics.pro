@@ -38,8 +38,10 @@ SOURCES += main.cpp\
     twosheetedhyperboloid.cpp \
     onesheetedhyperboloid.cpp \
     ellipsoid.cpp \
-    result.cpp \
     matchparser.cpp \
+    parsel.cpp \
+    result.cpp \
+    randgraph.cpp \
     support.cpp
 
 HEADERS  += widget.h \
@@ -55,8 +57,10 @@ HEADERS  += widget.h \
     twosheetedhyperboloid.h \
     onesheetedhyperboloid.h \
     ellipsoid.h \
-    result.h \
     matchparser.h \
+    parsel.h \
+    result.h \
+    randgraph.h \
     support.h
 
 FORMS    += widget.ui \
