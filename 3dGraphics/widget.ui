@@ -1420,7 +1420,7 @@
     </item>
     <item>
      <property name="text">
-      <string>Произвольнаа функция</string>
+      <string>Произвольная функция</string>
      </property>
     </item>
    </widget>
@@ -1526,24 +1526,47 @@
      <string>Ввод</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLabel" name="label_30">
     <property name="geometry">
      <rect>
-      <x>208</x>
-      <y>11</y>
-      <width>211</width>
+      <x>130</x>
+      <y>40</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Функция введена некорректно</string>
+    </property>
+   </widget>
+   <widget class="QSplitter" name="splitter">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>10</y>
+      <width>162</width>
       <height>20</height>
      </rect>
     </property>
-    <property name="minimumSize">
-     <size>
-      <width>31</width>
-      <height>20</height>
-     </size>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
-    <property name="text">
-     <string/>
-    </property>
+    <widget class="QLabel" name="label_29">
+     <property name="text">
+      <string>z(x,y)=</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="minimumSize">
+      <size>
+       <width>31</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

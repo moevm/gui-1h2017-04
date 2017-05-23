@@ -1,5 +1,4 @@
 #include "support.h"
-#include "QFile"
 #include "ui_support.h"
 
 Support::Support(QWidget *parent) :
@@ -7,22 +6,18 @@ Support::Support(QWidget *parent) :
     ui(new Ui::Support)
 {
     ui->setupUi(this);
-    QFile file;
+
 }
-Support::OutputText(int number)
+void Support::OutputText(int i)
 {
-  if (number==1) {
-      file.setName("support.txt");
-      if (file.open(QIODevice::ReadOnly))
-          ui->textEdit->setPlainText(QString::fromUtf8(file.readAll()));
-      file.close;
-  };
-  if (number==2) {
-      file.setName("developers.txt");
-      if (file.open(QIODevice::ReadOnly))
-          ui->textEdit->setPlainText(QString::fromUtf8(file.readAll()));
-      file.close;
-  };
+  if (i==1) {
+      ui->textEdit->setVisible(true);
+      ui->textEdit_2->setVisible(false);
+  }
+  if (i==2) {
+      ui->textEdit->setVisible(false);
+      ui->textEdit_2->setVisible(true);
+  }
 }
 
 Support::~Support()

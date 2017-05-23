@@ -24,6 +24,8 @@ Widget::Widget(QWidget *parent) :
 
     connect(ui->alpha, SIGNAL(valueChanged(int)), this, SLOT(setAlpha()));
     connect(ui->scale, SIGNAL(valueChanged(int)), this, SLOT(setScale()));
+
+    s = new Support();
 }
 
 Widget::~Widget()
@@ -275,7 +277,7 @@ void Widget::groupBoxVisibility(int comboIndex)
                 ui->groupBox_8->setVisible(0);
                 ui->groupBox_9->setVisible(0);
                 ui->groupBox_10->setVisible(1);
-
+                ui->label_30->setVisible(false);
                 connect(ui->lineEdit, SIGNAL(textChanged(QString)), this, SLOT(button16Enabled()));
                 break;
         }
@@ -380,12 +382,13 @@ void Widget::on_pushButton_16_clicked()
     pars.setVariable("x", 4.0);
     pars.setVariable("y", 2.0);
     pars.Parse(ui->lineEdit->text());
-    if (!pars.getFlag()) {
+    if (pars.getFlag()) {
+        ui->label_30->setVisible(false);
         ui->openGLWidget->setValue(ui->comboBox->currentIndex(), ui->lineEdit->text());
         ui->openGLWidget->update();
-    //int a = 5;
+
     }
-    else {}
+    else {ui->label_30->setVisible(true);}
 }
 
 void Widget::on_pushButton_15_clicked()
@@ -493,4 +496,18 @@ float Widget::check(QString text)
         }
     }
     return (text.toFloat());
+}
+
+void Widget::on_pushButton_2_clicked()
+{
+    s->OutputText(1);
+    s->show();
+
+}
+
+void Widget::on_pushButton_3_clicked()
+{
+    s->OutputText(2);
+    s->show();
+
 }

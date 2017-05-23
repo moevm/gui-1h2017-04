@@ -21,6 +21,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
+#include <QtWidgets/QSplitter>
 #include <QtWidgets/QWidget>
 #include "scene.h"
 
@@ -165,6 +166,9 @@ public:
     QPushButton *pushButton_3;
     QGroupBox *groupBox_10;
     QPushButton *pushButton_16;
+    QLabel *label_30;
+    QSplitter *splitter;
+    QLabel *label_29;
     QLineEdit *lineEdit;
 
     void setupUi(QWidget *Widget)
@@ -853,10 +857,20 @@ public:
         pushButton_16 = new QPushButton(groupBox_10);
         pushButton_16->setObjectName(QStringLiteral("pushButton_16"));
         pushButton_16->setGeometry(QRect(360, 38, 120, 37));
-        lineEdit = new QLineEdit(groupBox_10);
+        label_30 = new QLabel(groupBox_10);
+        label_30->setObjectName(QStringLiteral("label_30"));
+        label_30->setGeometry(QRect(130, 40, 161, 21));
+        splitter = new QSplitter(groupBox_10);
+        splitter->setObjectName(QStringLiteral("splitter"));
+        splitter->setGeometry(QRect(130, 10, 162, 20));
+        splitter->setOrientation(Qt::Horizontal);
+        label_29 = new QLabel(splitter);
+        label_29->setObjectName(QStringLiteral("label_29"));
+        splitter->addWidget(label_29);
+        lineEdit = new QLineEdit(splitter);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(208, 11, 211, 20));
         lineEdit->setMinimumSize(QSize(31, 20));
+        splitter->addWidget(lineEdit);
         QWidget::setTabOrder(lineEdit_5, pushButton_11);
         QWidget::setTabOrder(pushButton_11, pushButton_12);
         QWidget::setTabOrder(pushButton_12, pushButton_13);
@@ -1037,12 +1051,14 @@ public:
          << QApplication::translate("Widget", "x^2 - y^2 = 2z", Q_NULLPTR)
          << QApplication::translate("Widget", "x^2 + y^2 - z^2 = 0", Q_NULLPTR)
          << QApplication::translate("Widget", "x^2 + y^2 - z^2 = -1", Q_NULLPTR)
-         << QApplication::translate("Widget", "\320\237\321\200\320\276\320\270\320\267\320\262\320\276\320\273\321\214\320\275\320\260\320\260 \321\204\321\203\320\275\320\272\321\206\320\270\321\217", Q_NULLPTR)
+         << QApplication::translate("Widget", "\320\237\321\200\320\276\320\270\320\267\320\262\320\276\320\273\321\214\320\275\320\260\321\217 \321\204\321\203\320\275\320\272\321\206\320\270\321\217", Q_NULLPTR)
         );
         label_28->setText(QApplication::translate("Widget", "\320\234\320\260\321\201\321\210\321\202\320\260\320\261", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("Widget", "\320\241\320\273\321\203\320\266\320\261\320\260 \320\277\320\276\320\264\320\264\320\265\321\200\320\266\320\272\320\270", Q_NULLPTR));
         groupBox_10->setTitle(QString());
         pushButton_16->setText(QApplication::translate("Widget", "\320\222\320\262\320\276\320\264", Q_NULLPTR));
+        label_30->setText(QApplication::translate("Widget", "\320\244\321\203\320\275\320\272\321\206\320\270\321\217 \320\262\320\262\320\265\320\264\320\265\320\275\320\260 \320\275\320\265\320\272\320\276\321\200\321\200\320\265\320\272\321\202\320\275\320\276", Q_NULLPTR));
+        label_29->setText(QApplication::translate("Widget", "z(x,y)=", Q_NULLPTR));
         lineEdit->setText(QString());
     } // retranslateUi
 

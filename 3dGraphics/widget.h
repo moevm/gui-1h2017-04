@@ -2,6 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include "support.h"
 
 namespace Ui {
 class Widget;
@@ -42,8 +43,13 @@ private slots:
     void setAlpha();
     void setScale();
 
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
 private:
     Ui::Widget *ui;
+    Support *s;
 };
 
 #endif // WIDGET_H
