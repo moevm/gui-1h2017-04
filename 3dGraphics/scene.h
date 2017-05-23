@@ -12,8 +12,6 @@
 #include "ellipticparaboloid.h"
 #include "hyperbolicparaboloid.h"
 #include "cone.h"
-#include "ellipsoid.h"
-#include "onesheetedhyperboloid.h"
 #include "twosheetedhyperboloid.h"
 #include "randgraph.h"
 
